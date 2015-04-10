@@ -1,8 +1,13 @@
 .hero-unit{
   color: #E62F17;
+  position: absolute;
+  left: 10%;
+  top: 47px;
+  width: 50%;
 }
 .container{
   padding: 0;
+  width: 100%;
 }
 .navbar-default{
   background-color: #000;
@@ -56,6 +61,45 @@
 }
 .newFoot{
   position: absolute;
-  bottom: 0px;
   width: 90%;
+}
+.leftRed{
+  background-color: #E62F17;
+  width: 63px;
+  height: 100.6%;
+  margin-top: 0px;
+  margin-left: 1px;
+  position: absolute;
+  left: 15px;
+  top: -1px;
+}
+.newParent{
+  height: 100%;
+}
+.pics{
+  padding-top: 138px;
+  padding-left: 15.6%;
+  border-color: blue;
+  position: relative;
+}
+.allPics{
+  width: 32%;
+  cursor: pointer;
+}
+.imageParents{
+  position: relative;
+  left: 2px;
+  top: 0px;
+  width: 32%;
+  height: 25%;
+}
+.attributes{
+  display: none;
+  position: absolute;
+  left: 0px;
+  bottom: -90px;
+  color: black;
+  font-weight: bold;
+  font-size: 0.9em;
+  width: 100%;
 }
