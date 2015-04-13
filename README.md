@@ -12,6 +12,7 @@ On mouse over of the event image, the title, date time and venue will be listed 
 * Underscore 1.5.2 hot-linked from [CDNJS](http://cdnjs.com)
 * Twitter Bootstrap 3.0.2 included in /css, /js, /fonts
 
+## To view the application run index.html in any of the favorate servers.
 
 
 ## To do
