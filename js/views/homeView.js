@@ -7,82 +7,25 @@ define(['../.././libs/text.js!../.././templates/home.html', '.././models/eventMo
 
 		initialize: function() {
 			var self = this;
-			this.model = Event;
-			this.collection = Events;
-            var event1 = new Event({ 
-				tittle: "Anual Meet.", 
-				dateTime: "April 1st 2015, 10:00 AM.", 
-				venue: "Central auditorium.", 
-				image:"/img/1.jpg",
-				caption:"Random",
-				description:"Random"
+			self.model = Event;
+			self.collection = Events;
+			$.getJSON( "../../data.json", function( Data ) {
+				self.data = Data.Events;
+			    var eventArray = [];
+				for(var i=0; i<self.data.length; i++){
+					eventArray.push(new Event({
+						tittle: self.data[i].tittle,
+						dateTime: self.data[i].dateTime, 
+						venue: self.data[i].venue, 
+						image: self.data[i].image,
+						caption: self.data[i].caption,
+						description: self.data[i].description,
+						modelId: self.data[i].modelId
+					}));
+				}
+				self.myEvents = new Events(eventArray);
+				self.render() ;
 			});
-			var event2 = new Event({ 
-				tittle: "Team trek.", 
-				dateTime: "April 10th 2015, 05:00 PM.", 
-				venue: "Drive Inn Place.", 
-				image:"/img/2.jpg" ,
-				caption:"Random",
-				description:"Random"
-			});
-			var event3 = new Event({ 
-				tittle: "Anual Meet.", 
-				dateTime: "Jan 26th 2015, 11:00 AM.", 
-				venue: "Skill Development Workshop.", 
-				image:"/img/3.jpg",
-				caption:"Random",
-				description:"Random"
-			});
-			var event4 = new Event({ 
-				tittle: "Team trek.", 
-				dateTime: "April 10th 2015, 05:00 PM.", 
-				venue: "Drive Inn Place.", 
-				image:"/img/4.jpg",
-				caption:"Random",
-				description:"Random"
-			});
-			var event5 = new Event({ 
-				tittle: "Anual Meet.", 
-				dateTime: "April 1st 2015, 10:00 AM.", 
-				venue: "Central auditorium.", 
-				image:"/img/5.jpg",
-				caption:"Random",
-				description:"Random"
-			});
-			var event6 = new Event({ 
-				tittle: "Team trek.", 
-				dateTime: "April 10th 2015, 05:00 PM.", 
-				venue: "Drive Inn Place.", 
-				image:"/img/6.jpg",
-				caption:"Random",
-				description:"Random"
-			});
-			var event7 = new Event({ 
-				tittle: "Anual Meet.", 
-				dateTime: "April 1st 2015, 10:00 AM.", 
-				venue: "Central auditorium.", 
-				image:"/img/7.jpg",
-				caption:"Random",
-				description:"Random"
-			});
-			var event8 = new Event({ 
-				tittle: "Team trek.", 
-				dateTime: "April 10th 2015, 05:00 PM.", 
-				venue: "Drive Inn Place.", 
-				image:"/img/8.jpg",
-				caption:"Random",
-				description:"Random"
-			});
-			var event9 = new Event({ 
-				tittle: "Anual Meet.", 
-				dateTime: "April 1st 2015, 10:00 AM.", 
-				venue: "Central auditorium.", 
-				image:"/img/9.jpg",
-				caption:"Random",
-				description:"Random"
-			});
-			this.myEvents = new Events([ event1, event2, event3, event4, event5, event6, event7, event8, event9]);
-			self.render() ;
 		},
 
 		render: function() {
@@ -94,7 +37,14 @@ define(['../.././libs/text.js!../.././templates/home.html', '.././models/eventMo
 
 		events: {
 			'mouseenter .imageParents': 'hoverFunction',
-			'mouseleave .imageParents': 'hoverOutFunction'
+			'mouseleave .imageParents': 'hoverOutFunction',
+			'click .imageParents' : 'specificEventView'
+		},
+
+		specificEventView : function(event, ui){
+			var currentModelId = parseInt($(event.target).attr("modelId"));
+			var currentModel = this.myEvents.models[currentModelId];
+			Backbone.history.navigate("specificEventView/:"+( currentModel.get("modelId") ), true);
 		},
 
 		hoverFunction: function(event, ui){

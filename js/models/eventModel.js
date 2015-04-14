@@ -5,7 +5,9 @@ define(function () {
             title: "Not specified",
             dateTime: "Not specified",
             venue: "Not specified",
-            image: "Not specified"
+            image: "Not specified",
+            caption: "Not specified",
+            description: "Not specified"
         },
 
       	initialize: function(){
