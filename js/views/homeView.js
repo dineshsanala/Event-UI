@@ -1,11 +1,14 @@
-require(['libs/text!home.html'], function (homeTpl) {	
-	var HomeView = Backbone.View.extend({
+define(['../.././libs/text.js!../.././templates/home.html', '.././models/eventModel', '.././collections/eventsCollection'], function (homeTpl, Event, Events) {
+	var homeView;
+	homeView = Backbone.View.extend({
 		el: "#content",
 
 		template: homeTpl,
 
 		initialize: function() {
 			var self = this;
+			this.model = Event;
+			this.collection = Events;
             var event1 = new Event({ 
 				tittle: "Anual Meet.", 
 				dateTime: "April 1st 2015, 10:00 AM.", 
@@ -103,4 +106,5 @@ require(['libs/text!home.html'], function (homeTpl) {
 			$(event.target.parentElement.childNodes[1]).hide();
 		}
 	});
+	return homeView;
 });
