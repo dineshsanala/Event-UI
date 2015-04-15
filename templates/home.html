@@ -10,24 +10,25 @@
 			<span class="glyphicon glyphicon-signal fixedSignal"></span>
 			<span class="glyphicon glyphicon-cog fixedCog"></span>
 		</span>
-		<div class="hero-unit">
-			<h1 class="newH1">Upcoming Events</h1>
-		</div>
-		<div class="pics">
-			<% _.each(Events, function(Event, i)  { %>
-			  <span modelId = <%= i %> class="imageParents">
-			  	<span modelId = <%= i %> class="attributes">
-				  	<span><%=Event.get("tittle")%></span><br/>
-				  	<span><%=Event.get("dateTime")%></span><br/>
-				  	<span><%=Event.get("venue")%></span><br/>
+		<span id="details">
+			<div class="hero-unit">
+				<h1 class="newH1">Upcoming Events</h1>
+			</div>
+			<span class="viewShiftingDropdownParent pull-right">
+				<span class="viewShiftingDropdown dropdown pull-right">
+				  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+				    Sort Events 
+				    <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				    <li class="gridClass" role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-th"></span><span class="alignCenter">Grid</span></a></li>
+				    <li class="listClass" role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-list-alt"></span><span class="alignCenter">List</span></a></li>
+				  </ul>
 				</span>
-			  	<img modelId = <%= i %> class="allPics" src = <%= Event.get("image") %> />
-			  </span>
-			  <% if( (i != 0)&&(i%3 == 2) ){ %>
-			  		<br/>
-			  <% } %>
-		    <% }); %>
-		</div>
-
+			</span>
+			<div class="eventsView">
+				
+			</div>
+		</span>
 	</div>
 </div>

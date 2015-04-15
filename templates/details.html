@@ -1,46 +1,28 @@
-<div class="row-fluid">
-	<div class="newParent span10">
-		<span class="span1 leftRed">
-			<span class="glyphicon glyphicon-home fixedHome"></span>
-			<span class="glyphicon glyphicon-list-alt fixedlist"></span>
-			<span class="glyphicon glyphicon glyphicon-plus fixedPlus"></span>
-			<span class="glyphicon glyphicon-user fixedUser"></span>
-			<span class="glyphicon glyphicon-comment fixedComment"></span>
-			<span class="glyphicon glyphicon-asterisk fixedAsterisk"></span>
-			<span class="glyphicon glyphicon-signal fixedSignal"></span>
-			<span class="glyphicon glyphicon-cog fixedCog"></span>
-		</span>
-		<div class="hero-unit">
-			<h1 class="newH1">Event Details</h1>
-		</div>
-		<div class="pics">
-			<form>
-			  <div class="form-group">
-			    <label class="lableTitles" for="eventTitleFor">Event Title:</label>
-			    <span class="lableAnswers eventTitle"><%= model.tittle %></span>
-			  </div>
-			  <div class="form-group">
-			    <label class="lableTitles" for="eventDateTimeFor">Event Date and Time:</label>
-			    <span class="lableAnswers eventDateTime"><%= model.dateTime %></span>
-			  </div>
-			  <div class="form-group">
-			    <label class="lableTitles" for="eventVenueFor">Venue:</label>
-			    <span class="lableAnswers eventVenue"><%= model.venue %></span>
-			  </div>
-			  <div class="form-group">
-			    <img src="../<%= model.image %>" width="65%" />
-			  </div>
-			  <div class="form-group">
-			    <label class="lableTitles" for="eventCaptionFor">Caption</label>
-			    <span class="lableAnswers eventCaption"><%= model.caption %></span>
-			  </div>
-			  <div class="form-group">
-			    <label class="lableTitles" for="eventDescriptionFor">Description</label>
-			    <span class="lableAnswers eventDescription"><%= model.description %></span>
-			  </div>
-			  <button type="submit" class="backBtn btn btn-default">Back</button>
-			</form>
-		</div>
-
-	</div>
+<div class="detailsPage">
+	<form>
+	  <div class="form-group">
+	    <label class="lableTitles" for="eventTitleFor">Event Title:</label>
+	    <span class="lableAnswers eventTitle"><%= model.tittle %></span>
+	  </div>
+	  <div class="form-group">
+	    <label class="lableTitles" for="eventDateTimeFor">Event Date and Time:</label>
+	    <span class="lableAnswers eventDateTime"><%= model.dateTime %></span>
+	  </div>
+	  <div class="form-group">
+	    <label class="lableTitles" for="eventVenueFor">Venue:</label>
+	    <span class="lableAnswers eventVenue"><%= model.venue %></span>
+	  </div>
+	  <div class="form-group">
+	    <img src="../<%= model.image %>" width="65%" />
+	  </div>
+	  <div class="form-group">
+	    <label class="lableTitles" for="eventCaptionFor">Caption</label>
+	    <span class="lableAnswers eventCaption"><%= model.caption %></span>
+	  </div>
+	  <div class="form-group">
+	    <label class="lableTitles" for="eventDescriptionFor">Description</label>
+	    <span class="lableAnswers eventDescription"><%= model.description %></span>
+	  </div>
+	  <button type="submit" class="backBtn btn btn-default">Back</button>
+	</form>
 </div>

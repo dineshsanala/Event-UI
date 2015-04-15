@@ -1,4 +1,4 @@
-require(['js/views/homeView', 'js/views/headerView', 'js/views/footerView', 'js/views/detailsView'], function (HomeView, HeaderView, FooterView, DetailsView) {
+require(['js/views/homeView', 'js/views/headerView', 'js/views/detailsView'], function (HomeView, HeaderView, DetailsView) {
 	var ApplicationRouter = Backbone.Router.extend({
 		routes: {
 			"" : "home",
@@ -7,7 +7,6 @@ require(['js/views/homeView', 'js/views/headerView', 'js/views/footerView', 'js/
 		initialize: function() {
 			this.headerView = new HeaderView();
 			this.headerView.render();
-			
 		},
 		home: function() {
 			this.homeView = new HomeView();

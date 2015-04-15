@@ -1,7 +1,7 @@
 define(['../.././libs/text.js!../.././templates/details.html'], function (detailsTpl) {
 	var detailsView;
 	detailsView = Backbone.View.extend({
-		el: "#content",
+		el: "#details",
 
 		template: detailsTpl,
 

@@ -1,0 +1,13 @@
+<% _.each(Events, function(Event, i)  { %>
+  <span modelId = <%= i %> class="imageParents">
+  	<span modelId = <%= i %> class="attributes">
+	  	<span><%=Event.get("tittle")%></span><br/>
+	  	<span><%=Event.get("dateTime")%></span><br/>
+	  	<span><%=Event.get("venue")%></span><br/>
+	</span>
+  	<img modelId = <%= i %> class="allPics" src = <%= Event.get("image") %> />
+  </span>
+  <% if( (i != 0)&&(i%3 == 2) ){ %>
+  		<br/>
+  <% } %>
+<% }); %>
