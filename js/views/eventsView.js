@@ -6,9 +6,9 @@ define(['../.././libs/text.js!../.././templates/eventsView.html', '.././models/e
 		template: eventsTpl,
 
 		initialize: function(params) {
-			console.log(params.viewMode);
 			var self = this;
 			self.model = Event;
+			self.viewMode=params.viewMode;
 			self.collection = Events;
 			$.getJSON( "../../data.json", function( Data ) {
 				self.data = Data.Events;
@@ -25,20 +25,34 @@ define(['../.././libs/text.js!../.././templates/eventsView.html', '.././models/e
 					}));
 				}
 				self.myEvents = new Events(eventArray);
+				self.template = _.template( self.template );
 				self.render() ;
 			});
-		},
-
-		render: function() {
-			var self = this;
-			this.template = _.template( this.template );
-			$(this.el).html( this.template( {Events : self.myEvents.models} ) );
 		},
 
 		events: {
 			'mouseenter .imageParents': 'hoverFunction',
 			'mouseleave .imageParents': 'hoverOutFunction',
-			'click .imageParents' : 'specificEventView'
+			'click .imageParents' : 'specificEventView',
+			'click .gridClass' : 'getGridView',
+			'click .listClass' : 'getListView',
+			'click .mainBox' : 'specificEventView'
+		},
+
+		getGridView: function(){
+			this.viewMode = 'grid';
+			this.render();
+		},
+
+		getListView: function(){
+			this.viewMode = 'list';
+			this.render();
+		},
+
+		render: function() {
+			var self = this;
+			self.myEvents.models.viewMode = self.viewMode;
+			$(this.el).html( this.template({ Events : self.myEvents.models }) );
 		},
 
 		specificEventView : function(event, ui){

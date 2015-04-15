@@ -3,7 +3,7 @@
   position: absolute;
   left: 10%;
   top: 47px;
-  width: 100%;
+  width: 87%;
   z-index: 20;
 }
 .container{
@@ -49,10 +49,12 @@
 .newNav{
   height: 54px;
   background-color: #34383C;
+  z-index: 21;
+  border: none;
 }
 .newE{
   font-size: 60px;
-  padding-top: 12px;
+  padding-top: 14px;
   background-color: #000;
   border: none;
   padding-bottom: 20px;
@@ -75,9 +77,9 @@
   height: 100.6%;
   margin-top: 0px;
   margin-left: 1px;
-  position: absolute;
-  left: 15px;
-  top: -1px;
+  position: fixed;
+  left: 0px;
+  top: 0px;
 }
 .newParent{
   height: 100%;
@@ -210,8 +212,8 @@
   background-color: #000;
   position: fixed;
   right: 17px;
-  height: 52px;
-  z-index: 10;
+  height: 54px;
+  z-index: 1000;
 }
 .lableTitles{
   font-size: 1.3em;
@@ -223,10 +225,29 @@
 .viewShiftingDropdownParent{
   z-index: 20;
   display: inline;
+  position: absolute;
+  right: 0px;
+  top: 5%;
 }
 .viewShiftingDropdown{
   z-index: 20;
 }
 .alignCenter{
   margin-left: 15%;
+}
+.eventBoxes{
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+.mainBox{
+  cursor: pointer;
+  border-color: black;
+}
+.row{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.col-md-12{
+  padding: 0px;
 }

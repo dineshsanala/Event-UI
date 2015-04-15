@@ -16,21 +16,10 @@ define(['../.././libs/text.js!../.././templates/home.html', '../views/eventsView
 			$(this.el).html( this.template );
 			this.getGridView();
 		},
-
-		events: {
-			'click .gridClass' : 'getGridView',
-			'click .listClass' : 'getListView'
-		},
-
+		
 		getGridView: function(){
 			this.EventsView = new EventsView({
 				viewMode : "grid"
-			});
-		},
-
-		getListView: function(){
-			this.EventsView = new EventsView({
-				viewMode : "list"
 			});
 		}
 	});
