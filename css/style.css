@@ -8,7 +8,11 @@
 }
 .container{
   padding: 0;
+  height: 100%;
   width: 100%;
+  position: absolute;
+  left: 0px
+  top:0px;
 }
 .navbar-default{
   background-color: #000;
@@ -88,7 +92,9 @@
   padding-top: 138px;
   padding-left: 15.6%;
   border-color: blue;
-  position: relative;
+  position: absolute;
+  width: 100%;
+  height:100%;
 }
 .detailsPage{
   padding-top: 138px;
@@ -120,6 +126,7 @@
   color: white;
   text-align: center;
   cursor: pointer;
+  z-index: 999;
 }
 .fixedHome{
   font-size: 28px;
@@ -227,7 +234,7 @@
   display: inline;
   position: absolute;
   right: 0px;
-  top: 5%;
+  top: -138px;
 }
 .viewShiftingDropdown{
   z-index: 20;
@@ -250,4 +257,22 @@
 }
 .col-md-12{
   padding: 0px;
+}
+@media screen and (max-width: 550px) {
+  .allPics{
+    width: 80%
+  }
+  .attributes{
+    display: block;
+    width: 165px;
+    left: -165px;
+  }
+  .responsiveClass{
+    left: 109px;
+  }
+}
+#eventsContent{
+  position: absolute;
+  left: 17%;
+  width: 83%;
 }

@@ -27,6 +27,7 @@ define(['../.././libs/text.js!../.././templates/eventsView.html', '.././models/e
 				self.myEvents = new Events(eventArray);
 				self.template = _.template( self.template );
 				self.render() ;
+				self.addClasses();
 			});
 		},
 
@@ -37,6 +38,15 @@ define(['../.././libs/text.js!../.././templates/eventsView.html', '.././models/e
 			'click .gridClass' : 'getGridView',
 			'click .listClass' : 'getListView',
 			'click .mainBox' : 'specificEventView'
+		},
+
+		addClasses: function(){
+			var attributesArray = $(".attributes");
+			for(var i=0; i<attributesArray.length; i++){
+				if( parseInt($(attributesArray[i]).attr("modelId"))%3 == 0 ){
+					$(attributesArray[i]).addClass('responsiveClass');
+				}
+			}
 		},
 
 		getGridView: function(){

@@ -1,43 +1,45 @@
-<span class="viewShiftingDropdownParent pull-right">
-  <span class="viewShiftingDropdown dropdown pull-right">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-      Sort Events 
-      <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-      <li class="gridClass" role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-th"></span><span class="alignCenter">Grid</span></a></li>
-      <li class="listClass" role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-list-alt"></span><span class="alignCenter">List</span></a></li>
-    </ul>
-  </span>
-</span>
-<% if( Events.viewMode == "grid" ){ %>
-  <% _.each(Events, function(Event, i)  { %>
-    <span modelId = <%= i %> class="imageParents">
-    	<span modelId = <%= i %> class="attributes">
-  	  	<span><%=Event.get("tittle")%></span><br/>
-  	  	<span><%=Event.get("dateTime")%></span><br/>
-  	  	<span><%=Event.get("venue")%></span><br/>
-  	  </span>
-    	<img modelId = <%= i %> class="allPics" src = <%= Event.get("image") %> />
+<div id="eventsContent">
+  <span class="viewShiftingDropdownParent pull-right">
+    <span class="viewShiftingDropdown dropdown pull-right">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+        Sort Events 
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+        <li class="gridClass" role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-th"></span><span class="alignCenter">Grid</span></a></li>
+        <li class="listClass" role="presentation"><a role="menuitem" tabindex="-1" href="#"><span class="glyphicon glyphicon-list-alt"></span><span class="alignCenter">List</span></a></li>
+      </ul>
     </span>
-    <% if( (i != 0)&&(i%3 == 2) ){ %>
-    		<br/>
-    <% } %>
-  <% }); %>
-<% }else if( Events.viewMode == "list" ){ %>
-  <ol>
+  </span>
+  <% if( Events.viewMode == "grid" ){ %>
     <% _.each(Events, function(Event, i)  { %>
-      <li modelId = <%= i %> >
-        <span class="mainBox"  modelId = <%= i %> >
-          <span modelId = <%= i %> class="lableTitles">Tittle:</span>
-          <span modelId = <%= i %> class="lableAnswers"><%=Event.get("tittle")%></span><br/>
-
-          <span modelId = <%= i %> class="lableTitles">Date and Venue:</span><br/>
-          <span modelId = <%= i %> class="lableAnswers"><%=Event.get("dateTime")%></span><br/>
-          <span modelId = <%= i %> class="lableAnswers"><%=Event.get("venue")%>
-        </span>
-      </li>
-      <br/>
+      <span modelId = <%= i %> class="imageParents">
+      	<span modelId = <%= i %> class="attributes">
+    	  	<span><%=Event.get("tittle")%></span><br/>
+    	  	<span><%=Event.get("dateTime")%></span><br/>
+    	  	<span><%=Event.get("venue")%></span><br/>
+    	  </span>
+      	<img modelId = <%= i %> class="allPics" src = <%= Event.get("image") %> />
+      </span>
+      <% if( (i != 0)&&(i%3 == 2) ){ %>
+      		<br/>
+      <% } %>
     <% }); %>
-  </ol>
-<% } %>
+  <% }else if( Events.viewMode == "list" ){ %>
+    <ol>
+      <% _.each(Events, function(Event, i)  { %>
+        <li modelId = <%= i %> >
+          <span class="mainBox"  modelId = <%= i %> >
+            <span modelId = <%= i %> class="lableTitles">Tittle:</span>
+            <span modelId = <%= i %> class="lableAnswers"><%=Event.get("tittle")%></span><br/>
+
+            <span modelId = <%= i %> class="lableTitles">Date and Venue:</span><br/>
+            <span modelId = <%= i %> class="lableAnswers"><%=Event.get("dateTime")%></span><br/>
+            <span modelId = <%= i %> class="lableAnswers"><%=Event.get("venue")%>
+          </span>
+        </li>
+        <br/>
+      <% }); %>
+    </ol>
+  <% } %>
+</div>
