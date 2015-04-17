@@ -10,7 +10,7 @@ define(['../.././libs/text.js!../.././templates/eventsView.html', '.././models/e
 			self.model = Event;
 			self.viewMode=params.viewMode;
 			self.collection = Events;
-			$.getJSON( "../../data.json", function( Data ) {
+			$.getJSON( "data.json", function( Data ) {
 				self.data = Data.Events;
 			    var eventArray = [];
 				for(var i=0; i<self.data.length; i++){
